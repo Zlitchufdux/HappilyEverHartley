@@ -1,0 +1,607 @@
+:root {
+        /* --Light Theme --*/
+    --color-primary: #1a7ec0;
+    --color-primary-variant: #fddab8;
+    --color-bg-1: #ffffff;
+    --color-bg-2: #cbcbcb;
+    --color-bg-3: #c0c0c0;
+    --color-bg-4: #696969;
+    --color-text-1: #444444;
+    --color-light: #97cae5;
+    --color-white: hsl(0, 0%, 90%);
+
+    --container-width-lg: 88%;
+    --container-width-md: 92%
+
+    --transitions: all 400ms ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    background-color: var(--color-bg-1);
+}
+
+h1, h2 {
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+a {
+    color: var(--color-bg-4);
+    transition: var(--transitions);
+}
+
+a:hover {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.container {
+    width: var(--container-width-lg);
+    margin: 0 auto;
+    max-width: 2160px;
+    
+}
+
+img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+/* --- Nav --- */
+nav {
+    height: 7rem;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    visibility: visible;
+    top: 0;
+    left: 0;
+    z-index: 98;
+}
+
+/* nav class on scroll using JavaScript */
+.window-scrolled{
+    width: 100vw;
+    height: 7vw;
+    background-color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+}
+.nav_container {
+    height: 100%;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* only for tablets and phones */
+.nav_toggle-btn {
+    display: none;
+}
+
+.nav_logo {
+    justify-content: center;
+    display: flex;
+    font-family: 'Chopin Script', cursive;
+    font-size: 2.2rem;
+    font-weight: 200;
+    color: var(--color-bg-4);
+    letter-spacing: 0.2rem;
+    padding-top: 0.5rem;
+}
+
+.nav_links {
+    display: flex;
+    gap: 4rem;
+}
+
+.nav_socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav_socials a {
+    width: 1.3rem;
+    height: 1.3rem;
+    display: flex;
+    place-items: center;
+}
+
+.nav_socials a:hover {
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+}
+/* --- End of nav --- */
+
+/* --- Header --- */
+header {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 6rem;
+    overflow: hidden;
+}
+
+.header_container {
+    display: grid;
+    grid-template-columns: 43% 53%;
+    gap: 4%;
+    margin-top: 10rem;
+    position: relative;
+}
+
+.header_image-bg{
+    background: #92d9f0;
+    height: 22rem;
+    width: 16rem;
+    position: absolute;
+    justify-items: right;
+    border-radius: 3px;
+}
+
+.header_image-lg {
+    width: 29rem;
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 5px;
+    filter: saturate(0) brightness(0.4);
+    transition: var(--transition);
+}
+
+.header_image-sm {
+    width: 28rem;
+    height: 28rem;
+    overflow: hidden;
+    position: absolute;
+    top: 6rem;
+    left: 6rem;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.header_left:hover .header_image-sm {
+    opacity: 0;
+}
+
+.header_left:hover .header_image-lg {
+    filter: saturate(1) brightness(1);
+    border: 1rem solid #ffecb8;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+}
+
+.header_head {
+    display: flex;
+    gap: 2rem; 
+    align-items: flex-start;
+}
+
+.header_right p {
+    margin-top: 2rem;
+    width: 85%;
+}
+
+.header_tag {
+    font-family: 'Chopin Script', cursive;
+    font-size: 3.5rem;
+    font-weight: 200;
+    color: var(--color-bg-4);
+    letter-spacing: 0.2rem;
+}
+/* --- End of header --- */
+
+/* --- Only for tablets and phones --- */
+.header_btn-md {
+    display: none;
+}
+
+.header_frames {
+    position: absolute;
+    top: 78vh;
+    right: 52rem;
+    transition: var(--transition);
+}
+
+.header_frame {
+    width: 16rem;
+    border: 0.4rem solid #ffecb8;
+    box-shadow: 0 0 4rem rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform: rotate(-10deg);
+    transform-origin: bottom left;
+    transition: var(--transition);
+
+}
+
+.header_frame:nth-child(2) {
+    transform: rotate(20deg);
+    top: -2rem;
+    left: 4rem;
+}
+
+.header_frames:hover .header_frame {
+    transform: rotate(0deg);
+}
+
+.header_frames:hover .header_frame:nth-child(2) {
+    top: 0;
+    left: 17rem;
+}
+
+/* --- RSVP Button --- */
+.rsvp_btn {
+    color: var(--color-bg-4);
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.rsvp_btn {
+    background: rgb(255, 237, 198);
+    position: fixed;
+    right: 3%;
+    bottom: 3rem;
+}
+
+.rsvp_btn:hover {
+    box-shadow:  0 2rem 2rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-1rem);
+    color: var(--color-primary);
+    border: 0.2rem solid #f0d896;
+}
+
+.rsvp_btn img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0.7;
+}
+
+.rsvp_btn p {
+    font-size: 0.8rem;
+    font-weight: 800;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    animation: spinningText 45s infinite;
+}
+
+.rsvp_btn p span {
+    position: absolute;
+    transform-origin: 0.3rem 5rem;
+}
+
+@keyframes spinningText {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rsvp_info .rsvp_text {
+    visibility: hidden;
+    height: 11rem;
+    width: 19rem;
+    background-color: rgb(255, 255, 255);
+    border: 0.1rem solid var(--color-primary);
+    color: #2b2b2b;
+    text-align: center;
+    border-radius: 8px;
+    padding: 1rem;
+    bottom: 10rem;
+    right: 9rem;
+  
+    /* Position the message */
+    position: absolute;
+    z-index: 1;
+    
+  }
+  
+  .rsvp_info:hover .rsvp_text {
+    visibility: visible;
+    box-shadow:  0 2rem 2rem rgba(0, 0, 0, 0.2);
+    
+  }
+
+  .rsvp_btn:hover > .container {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+    border-radius:30px;
+}
+
+#Bridesmaids {
+    margin-top: 12rem;
+}
+
+.bridesmaids_head  {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.bridesmaids_container p {
+    width: 45rem;
+    
+}
+
+.swiper-wrapper {
+    margin-top: 5rem;
+    height: 37rem;
+    padding-bottom: 5rem;
+}
+
+.swiper {
+    width: 88%;
+    height: 100%;
+}
+
+.swiper-slide {
+    border: 0.5rem solid var(--color-light);
+    border-radius: 10px;
+    height: fit-content;
+    max-height: 36rem;
+    overflow: hidden;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition)
+}
+
+.swiper-slide:hover {
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.swiper-slide img {
+    width: auto;
+    height: 100%;
+    display: block;
+    filter: saturate(0);
+    object-fit: cover;
+    transition: var(--transition);
+
+}
+
+.swiper-slide:hover img {
+    filter: saturate(1);
+}
+
+/* --- End of Bridesmaids --- */
+
+#Groomsmen {
+    margin-top: 12rem;
+}
+
+.groomsmen_head  {
+    display: flex;
+    justify-content: space-between;
+}
+
+.groomsmen_container p {
+    width: 45rem;
+}
+
+.swiper-wrapper {
+    margin-top: 5rem;
+    height: 37rem;
+    padding-bottom: 5rem;
+}
+
+.swiper {
+    width: 88%;
+    height: 100%;
+}
+
+.swiper-slide {
+    border: 0.5rem solid var(--color-light);
+    border-radius: 10px;
+    height: fit-content;
+    max-height: 36rem;
+    overflow: hidden;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition)
+}
+
+.swiper-slide:hover {
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.2);
+    
+}
+
+.swiper-slide img {
+    width: 27.9rem;
+    height: 100%;
+    display: block;
+    filter: saturate(0);
+    object-fit: cover;
+    transition: var(--transition);
+
+}
+
+.swiper-slide:hover img {
+    filter: saturate(1);
+
+}
+/* --- End of Groomsmen --- */
+
+#engagement {
+    margin-top: 10rem;
+}
+
+.engagement_container {
+    position: relative;
+}
+
+.engagement_head {
+    display: grid;
+    grid-template-columns: 95rem;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
+.engagement_head > p {
+    width: 45rem;
+}
+
+.engagement_gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 5rem;
+    gap: 3rem;
+
+}
+
+.engagement_gallery article {
+    border: 0.5rem solid var(--color-bg-3);
+    transition: var(--transition)
+}
+
+.engagement_gallery article:nth-child(1) {
+    grid-row: 1/3;
+}
+
+.engagement_gallery article:nth-child(4) {
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+
+.engagement_gallery article img {
+    height: 100%;
+    filter: saturate(0);
+    transition: var(--transition);
+}
+
+.engagement_gallery article:hover img {
+    filter: saturate(1);
+}
+
+.engagement_gallery article:hover {
+    box-shadow: 0 4rem 4rem rgba(0, 0, 0, 0.5);
+    border-color: #97cae5;
+}
+
+/* --- End of Engagement--- */
+
+/* --- Footer --- */
+.footer {
+    margin-top: 7rem;
+    width: 100vw;
+}
+
+.footer_container > p {
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    font-family: 'Chopin Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: var(--color-bg-4);
+    letter-spacing: 0.2rem;
+    padding-bottom: 1rem;
+    padding-top: 2.5rem;
+}
+
+.footer_container:hover > p {
+    color: var(--color-primary);
+}
+.footer_container {
+    margin-top: 12rem;
+    padding-top: 5rem;
+    width: 100vw;
+}
+
+/* --- End of Footer --- */
+
+/* --- Google Map --- */
+.map_container {
+    display: grid;
+    grid-template-columns: 43% 53%;
+    gap: 4%;
+    margin-top: 8rem;
+    position: relative;
+}
+
+.map {
+    width: 38rem;
+    height: 28rem;
+    position: relative;
+    left: 5rem;
+    border-radius: 6px !important;
+    border: 0.3rem solid #eeeeee;
+}
+
+.map_text > h3 {
+    position: relative;
+    top: 1rem;
+    left: 0;
+    display: grid;
+    place-items: center;
+    font-weight: 500;
+}
+
+.camping {
+    padding-top: 3rem;
+}
+.button {
+    background-color: #30acc8;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 15px 25px;
+    cursor: pointer;
+    top: 14rem;
+}
+
+.socials {
+    width: 10vw;
+    height: 10vh;
+    display: grid;
+}
+
+.nav_socials {
+    display: flex;
+    gap: 1rem;
+}
