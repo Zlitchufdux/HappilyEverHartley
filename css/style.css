@@ -169,10 +169,15 @@ footer a:hover {
     overflow: hidden;
 }
 
+.hero img {
+    width: 140%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .hero-content {
     align-items: center;
-    min-height: calc(100vh - 141.6px);
+    height: 100vw;
 }
 
 .hero h2 {
@@ -327,14 +332,19 @@ footer a:hover {
 }
 
 .filter-btn {
-    background-color:var(--cl--1--);
+    background-color:#f3f3f3;
+    border-radius: 6px;
     cursor: pointer;
     position: relative;
     font-size: 20px;
     white-space: nowrap;
-    padding: 0.3em;
+    padding: 0.5em;
     max-width: max-content;
-    
+    align-self: center;
+}
+
+.filter-btn.active {
+    background-color: rgb(255, 226, 138);
 }
 
 .filter-btn::after {
@@ -353,6 +363,7 @@ footer a:hover {
 
 .filter-btn.active::after {
     width: 100%;
+    color: rgb(255, 182, 182);
 }
 
 .filter-cards {
@@ -480,19 +491,17 @@ footer a:hover {
     padding-bottom: 3rem;
 }
 
-.button {
+.page-btn {
     background-color: #30acc8;
     color: white;
-    width: 5rem;
+    width: 6rem;
     height: 3rem;
     border-radius: 8px;
     font-weight: 600;
-    text-align: center;
-    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
     cursor: pointer;
-
-    
 }
+
 /* registry */
 
 .registry {
@@ -520,7 +529,6 @@ footer a:hover {
 .rsvp {
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: 500px;
     padding: 4em 0;
 }
 
@@ -584,15 +592,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
-button {
+.page-btn {
     background-color: #30acc8;
     color: white;
-    width: 5rem;
+    width: 6rem;
     height: 3rem;
     border-radius: 8px;
     font-weight: 600;
-    align-items: center;
     justify-content: center;
+    padding-top: 0.9rem;
     cursor: pointer;
 }
 
@@ -682,7 +690,6 @@ footer p {
         display: none;
     }
 
-   
     .hero {
     background-color:rgb(255, 255, 255);
     background-repeat: no-repeat;
@@ -700,7 +707,21 @@ footer p {
     }
 
     h4 {
-        padding-top: 2em;
+        padding-bottom: 0.6em;
+    }
+
+    .story h4 {
+        padding-top: 1em;
+    }
+
+    .story .flex:nth-of-type(1) img {
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    
+    .story .flex:nth-of-type(2) img {
+        object-fit: cover;
+        border-radius: 20px;
     }
 }
 
